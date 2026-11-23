@@ -6,13 +6,11 @@ class App {
   constructor() {
     this.main = document.getElementById('main');
     this.navigation = document.getElementById('navigation');
-    this.clock = document.getElementById('clock');
     this.licenses = [];
     this.controller = null;
   }
 
   async Initialize() {
-    this.InitializeTaskbar();
     try {
       this.licenses = await this.LoadLicenses();
       this.controller = new LicenseController(this.licenses);
@@ -21,17 +19,6 @@ class App {
       console.error(error);
       this.main.innerHTML = '<p class="error">No se pudieron cargar las licencias.</p>';
     }
-  }
-
-  // The taskbar shows a start button that goes to the top and a live clock.
-  InitializeTaskbar() {
-    document.getElementById('start-button')
-      .addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    const updateClock = () => {
-      this.clock.textContent = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
-    };
-    updateClock();
-    setInterval(updateClock, 30000);
   }
 
   async LoadLicenses() {
@@ -46,31 +33,24 @@ class App {
   // The order of this list is the order of the sections on the page.
   RenderSections() {
     const sections = [
-      { id: 'all', icon: '🗂️', title: 'Todas las licencias', render: (parent) => this.RenderAllWithFilters(parent) },
-      { id: 'offers', icon: '🏷️', title: 'Ofertas', render: (parent) => this.controller.RenderOffers(3, parent) },
-      { id: 'featured', icon: '⭐', title: 'Destacados', render: (parent) => this.controller.RenderFeatured(3, parent) },
-      { id: 'latest', icon: '🆕', title: 'Últimas versiones', render: (parent) => this.controller.RenderLatest(3, parent) }
+      { id: 'all', title: 'Todas las licencias', render: (parent) => this.RenderAllWithFilters(parent) },
+      { id: 'offers', title: 'Ofertas', render: (parent) => this.controller.RenderOffers(3, parent) },
+      { id: 'featured', title: 'Destacados', render: (parent) => this.controller.RenderFeatured(3, parent) },
+      { id: 'latest', title: 'Últimas versiones', render: (parent) => this.controller.RenderLatest(3, parent) }
     ];
     sections.forEach((section) => this.RenderSection(section));
   }
 
-  // Every section is drawn as a retro window with a title bar.
-  RenderSection({ id, icon, title, render }) {
+  RenderSection({ id, title, render }) {
     const section = document.createElement('section');
     section.id = id;
-    section.className = 'window';
-    section.innerHTML = `
-      <div class="title-bar">
-        <span>${icon} ${title}</span>
-        <span class="title-buttons"><i>_</i><i>□</i><i>✕</i></span>
-      </div>
-      <div class="window-body"><div class="grid"></div></div>`;
+    section.innerHTML = `<h2>${title}</h2><div class="grid"></div>`;
     this.main.appendChild(section);
     render(section.querySelector('.grid'));
 
     const link = document.createElement('a');
     link.href = `#${id}`;
-    link.textContent = `${icon} ${title}`;
+    link.textContent = title;
     this.navigation.appendChild(link);
   }
 
@@ -83,8 +63,8 @@ class App {
     const Refresh = () => {
       grid.innerHTML = '';
       const total = this.controller.RenderAll(this.licenses.length, grid, filters);
-      counter.textContent = `${total} disquetes`;
-      if (total === 0) grid.innerHTML = '<p class="empty">No hay disquetes con esos filtros.</p>';
+      counter.textContent = `${total} licencias`;
+      if (total === 0) grid.innerHTML = '<p class="empty">No hay licencias con esos filtros.</p>';
     };
     Refresh();
   }
