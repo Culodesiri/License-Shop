@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "software": "PixelForge",
+    "version": "1.0",
+    "price": 58.99,
+    "key": "676N-M8MG-6VKF-C36L",
+    "featured": false,
+    "discount": 50
+  },
+  {
+    "id": 2,
+    "software": "PixelForge",
+    "version": "2.0",
+    "price": 65.99,
+    "key": "AEDC-NRB7-W6NQ-U9AF",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 3,
+    "software": "PixelForge",
+    "version": "2.5",
+    "price": 72.99,
+    "key": "7T4F-SWQU-BEG3-GU2E",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 4,
+    "software": "PixelForge",
+    "version": "3.0",
+    "price": 79.99,
+    "key": "BAPP-D823-4ENT-XFVX",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 5,
+    "software": "PixelForge",
+    "version": "3.5",
+    "price": 86.99,
+    "key": "A4HJ-RGAD-79MN-6NJ4",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 6,
+    "software": "PixelForge",
+    "version": "4.0",
+    "price": 93.99,
+    "key": "2H34-PATV-BPM3-GCKP",
+    "featured": true,
+    "discount": 0
+  },
+  {
+    "id": 7,
+    "software": "PixelForge",
+    "version": "4.5",
+    "price": 100.99,
+    "key": "6SAX-U2EE-FPRA-ZZ7J",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 8,
+    "software": "CodeNest IDE",
+    "version": "2018",
+    "price": 88.99,
+    "key": "8J2M-KVQR-NLN2-8F4D",
+    "featured": false,
+    "discount": 40
+  },
+  {
+    "id": 9,
+    "software": "CodeNest IDE",
+    "version": "2019",
+    "price": 99.99,
+    "key": "GGCS-R3S4-9UME-JQ8E",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 10,
+    "software": "CodeNest IDE",
+    "version": "2020",
+    "price": 109.99,
+    "key": "TPPB-ET46-RDCM-UZJF",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 11,
+    "software": "CodeNest IDE",
+    "version": "2021",
+    "price": 120.99,
+    "key": "ZJ6X-JCB8-YVCB-E8EV",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 12,
+    "software": "CodeNest IDE",
+    "version": "2022",
+    "price": 131.99,
+    "key": "WJEE-6ZCJ-XYF8-E4B9",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 13,
+    "software": "CodeNest IDE",
+    "version": "2023",
+    "price": 141.99,
+    "key": "A22A-EFFH-S4X2-767F",
+    "featured": true,
+    "discount": 0
+  },
+  {
+    "id": 14,
+    "software": "CodeNest IDE",
+    "version": "2024",
+    "price": 152.99,
+    "key": "BVF8-BQH9-9SAZ-VKNL",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 15,
+    "software": "VaultGuard Antivirus",
+    "version": "8.0",
+    "price": 38.99,
+    "key": "X69R-W3SN-5NP2-QWPJ",
+    "featured": false,
+    "discount": 30
+  },
+  {
+    "id": 16,
+    "software": "VaultGuard Antivirus",
+    "version": "9.0",
+    "price": 43.99,
+    "key": "J9YC-ETLH-68TP-429W",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 17,
+    "software": "VaultGuard Antivirus",
+    "version": "10.0",
+    "price": 47.99,
+    "key": "6WEC-TCTY-VBJ3-7NBT",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 18,
+    "software": "VaultGuard Antivirus",
+    "version": "11.0",
+    "price": 52.99,
+    "key": "RKDH-6GZE-NN8S-MA8C",
+    "featured": false,
+    "discount": 0
+  },
+  {
+    "id": 19,
+    "software": "VaultGuard Antivirus",
+    "version": "12.0",
+    "price": 57.99,
+    "key": "MQTY-L3QF-42J6-7NA2",
+    "featured": true,
+    "discount": 0
+  },
+  {
+    "id": 20,
+    "software": "VaultGuard Antivirus",
+    "version": "13.0",
+    "price": 61.99,
+    "key": "X7WP-GHPR-2FVW-SBYF",
+    "featured": false,
+    "discount": 0
+  }
+]
