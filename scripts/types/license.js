@@ -2,7 +2,7 @@ const currencyFormatter = new Intl.NumberFormat('es-ES', { style: 'currency', cu
 
 // A software license that can be displayed as a card and bought.
 export class License {
-  constructor(id, software, version, price, key, featured, discount) {
+  constructor(id, software, version, price, key, featured, discount, category = '', image = '') {
     this.id = id;
     this.software = software;
     this.version = version;
@@ -10,6 +10,8 @@ export class License {
     this.key = key;
     this.featured = featured;
     this.discount = discount;
+    this.category = category;
+    this.image = image;
   }
 
   get hasDiscount() { return this.discount > 0; }
@@ -21,8 +23,10 @@ export class License {
     card.innerHTML = `
       ${this.featured ? '<span class="badge featured">★ Destacado</span>' : ''}
       ${this.hasDiscount ? `<span class="badge discount">-${this.discount}%</span>` : ''}
+      <img class="card-image" src="${this.image}" alt="Icono de ${this.software}" loading="lazy">
       <h3>${this.software}</h3>
       <p class="version">Versión ${this.version}</p>
+      <span class="category">${this.category}</span>
       <p class="prices">
         ${this.hasDiscount ? `<s>${currencyFormatter.format(this.price)}</s>` : ''}
         <strong>${currencyFormatter.format(this.finalPrice)}</strong>

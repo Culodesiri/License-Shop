@@ -2,6 +2,8 @@
 export class LicenseController {
   constructor(licenses) {
     this.licenses = licenses;
+    // Random order is decided once, so filtering does not reshuffle the cards.
+    this.randomOrder = this.Shuffle(licenses);
   }
 
   RenderFeatured(count, parent) {
@@ -24,12 +26,28 @@ export class LicenseController {
     }
   }
 
-  RenderAll(count, parent) {
-    this.RenderList(this.Shuffle(this.licenses).slice(0, count), parent);
+  // Renders up to `count` licenses in random order and returns how many matched the filters.
+  RenderAll(count, parent, filters = {}) {
+    const matches = this.Filter(this.randomOrder, filters);
+    this.RenderList(matches.slice(0, count), parent);
+    return matches.length;
   }
 
   RenderList(licenses, parent) {
     licenses.forEach((license) => license.Render(parent));
+  }
+
+  Filter(licenses, { search = '', software = '', category = '', onlyOffers = false } = {}) {
+    const text = search.trim().toLowerCase();
+    return licenses.filter((license) =>
+      (!text || `${license.software} ${license.version}`.toLowerCase().includes(text))
+      && (!software || license.software === software)
+      && (!category || license.category === category)
+      && (!onlyOffers || license.hasDiscount));
+  }
+
+  GetUniqueValues(property) {
+    return [...new Set(this.licenses.map((license) => license[property]))];
   }
 
   GroupBySoftware() {
